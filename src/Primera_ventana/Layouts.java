@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class Layouts {
     public static void main(String[] args) {
+
         // Crear la ventana principal
         JFrame ventana = new JFrame();
         ventana.setBounds(10, 10, 200, 300);
@@ -24,8 +25,10 @@ public class Layouts {
         Panel2.add(boton02);
         Panel3.add(boton03);
 
+
         ventana.add(Panel1);
         ventana.add(Panel2);
+        ventana.add(Panel3);
 
         //Colores
 
@@ -47,5 +50,7 @@ public class Layouts {
 
 
         ventana.setVisible(true);
+
     }
+
 }

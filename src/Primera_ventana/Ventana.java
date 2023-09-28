@@ -11,7 +11,7 @@ public class Ventana {
         miPrimeraVentana.setBounds(10, 10, 200, 300);
         miPrimeraVentana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Crear paneles
+        // Crear paneles                   //Layout
         JPanel PanelPrincipal = new JPanel(new GridLayout(7, 1, 0, 10)); // 6 filas, 1 columna, espaciado vertical de 10
         JPanel Panel1 = new JPanel();
         JPanel Panel2 = new JPanel();
@@ -20,6 +20,10 @@ public class Ventana {
         JPanel Panel5 = new JPanel();
         JPanel Panel6 = new JPanel();
 
+        //Imagen
+
+        JLabel Imagen = new JLabel();
+        Imagen.setIcon(new ImageIcon("C:\\Users\\DavidGonzálezC\\Desktop\\Calendario.png"));
 
         // Etiqueta apellidos
         JLabel apellidos = new JLabel("Apellidos:");
@@ -91,6 +95,7 @@ public class Ventana {
         PanelPrincipal.add(Panel4);
         PanelPrincipal.add(Panel5);
         PanelPrincipal.add(Panel6);
+        PanelPrincipal.add(Imagen);
 
         //Añadirlos a la ventana y hacerla visibel
 
