@@ -8,7 +8,7 @@ public class Calculadora {
 
         // Crear la ventana principal
         JFrame ventana = new JFrame();
-        ventana.setBounds(10, 10, 300, 300);
+        ventana.setBounds(10, 10, 350, 350);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Crear paneles                   //Layout
