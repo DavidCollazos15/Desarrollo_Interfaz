@@ -2,8 +2,6 @@ package Primera_ventana;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ej2_GridBagLayout {
 
@@ -11,7 +9,7 @@ public class ej2_GridBagLayout {
 
         //Ventana
         JFrame ventana = new JFrame();
-        ventana.setBounds(10, 10, 350, 250);
+        ventana.setBounds(10, 10, 380, 280);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Paneles
@@ -39,6 +37,9 @@ public class ej2_GridBagLayout {
         JTextField TextEdad = new JTextField(20);
         JTextField TextDescripcion = new JTextField(20);
 
+        //Boton
+        JButton Submit = new JButton("Submit");
+
         //Ubicaciones:
 
         //Nombre
@@ -52,7 +53,7 @@ public class ej2_GridBagLayout {
                         1.0,
                         GridBagConstraints.LINE_END,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,2,0),
                         0,
                         0
                 ));
@@ -64,11 +65,11 @@ public class ej2_GridBagLayout {
                         0,
                         3,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,5,0,25),
+                        new Insets(2,5,2,25),
                         0,
                         0
                 ));
@@ -84,7 +85,7 @@ public class ej2_GridBagLayout {
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,0,0),
                         0,
                         0
                 ));
@@ -96,11 +97,11 @@ public class ej2_GridBagLayout {
                         1,
                         1,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,0,0),
                         0,
                         0
                 ));
@@ -112,11 +113,11 @@ public class ej2_GridBagLayout {
                         1,
                         1,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,25),
+                        new Insets(2,5,0,25),
                         0,
                         0
                 ));
@@ -132,7 +133,7 @@ public class ej2_GridBagLayout {
                         1.0,
                         GridBagConstraints.LINE_END,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(0,5,2,0),
                         0,
                         0
                 ));
@@ -148,7 +149,7 @@ public class ej2_GridBagLayout {
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,5,0,0),
+                        new Insets(0,5,2,0),
                         0,
                         0
                 ));
@@ -160,11 +161,11 @@ public class ej2_GridBagLayout {
                         2,
                         1,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,5,0,0),
+                        new Insets(0,5,2,0),
                         0,
                         0
                 ));
@@ -176,11 +177,11 @@ public class ej2_GridBagLayout {
                         2,
                         1,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,5,0,25),
+                        new Insets(0,5,2,25),
                         0,
                         0
                 ));
@@ -196,7 +197,7 @@ public class ej2_GridBagLayout {
                         1.0,
                         GridBagConstraints.LINE_END,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,2,0),
                         0,
                         0
                 ));
@@ -212,7 +213,7 @@ public class ej2_GridBagLayout {
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,2,0),
                         0,
                         0
                 ));
@@ -224,11 +225,11 @@ public class ej2_GridBagLayout {
                         3,
                         1,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.LINE_END,
                         GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,2,0),
                         0,
                         0
                 ));
@@ -240,17 +241,17 @@ public class ej2_GridBagLayout {
                         3,
                         1,
                         1,
-                        1.0,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.HORIZONTAL,
-                        new Insets(0,5,0,25),
+                        new Insets(2,5,2,25),
                         0,
                         0
                 ));
 
-        //Telefono
-        PrincipalPanel.add(Direccion,
+        //Descripcion
+        PrincipalPanel.add(Descripcion,
                 new GridBagConstraints(
                         0,
                         4,
@@ -258,9 +259,9 @@ public class ej2_GridBagLayout {
                         1,
                         1.0,
                         1.0,
+                        GridBagConstraints.NORTHEAST,
                         GridBagConstraints.LINE_END,
-                        GridBagConstraints.NONE,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,2,0),
                         0,
                         0
                 ));
@@ -272,11 +273,27 @@ public class ej2_GridBagLayout {
                         4,
                         3,
                         1,
-                        1.0,
+                        0.5,
+                        100.0,
+                        GridBagConstraints.CENTER,
+                        GridBagConstraints.BOTH,
+                        new Insets(2,5,2,25),
+                        0,
+                        0
+                ));
+
+        //Edad
+        PrincipalPanel.add(Submit,
+                new GridBagConstraints(
+                        2,
+                        5,
+                        2,
+                        1,
+                        0.5,
                         1.0,
                         GridBagConstraints.CENTER,
                         GridBagConstraints.BOTH,
-                        new Insets(0,5,0,0),
+                        new Insets(2,5,2,25),
                         0,
                         0
                 ));
