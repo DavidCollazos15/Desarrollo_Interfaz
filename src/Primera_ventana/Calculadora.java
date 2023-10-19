@@ -139,8 +139,13 @@ public class Calculadora {
                 ScriptEngine engine = manager.getEngineByName("js");
                 try {
                     Object resultado = engine.eval(expresion);
-                    previousResult = Double.parseDouble(resultado.toString()); // Almacena el resultado actual para ANS
-                    IntroducirNum.setText(resultado.toString());
+                    // Validación de división por cero
+                    if (Double.isInfinite(Double.parseDouble(resultado.toString())) || Double.isNaN(Double.parseDouble(resultado.toString()))) {
+                        IntroducirNum.setText("Error: División por cero");
+                    } else {
+                        previousResult = Double.parseDouble(resultado.toString()); // Almacena el resultado actual para ANS
+                        IntroducirNum.setText(resultado.toString());
+                    }
                 } catch (ScriptException ex) {
                     IntroducirNum.setText("Error");
                 }
