@@ -2,8 +2,7 @@ package Primera_ventana;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -11,6 +10,8 @@ import javax.script.ScriptException;
 public class Calculadora {
 
     private static double previousResult = 0.0;
+
+
 
     public static void main(String[] args) {
 
@@ -114,6 +115,11 @@ public class Calculadora {
         ActionListener numeroActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Si previamente esta el texto de error
+                String currentText = IntroducirNum.getText();
+                if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
+                    IntroducirNum.setText("");
+                }
                 JButton boton = (JButton) e.getSource();
                 String numero = boton.getText();
                 IntroducirNum.setText(IntroducirNum.getText() + numero);
@@ -124,6 +130,11 @@ public class Calculadora {
         ActionListener operadorActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Si previamente esta el texto de error
+                String currentText = IntroducirNum.getText();
+                if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
+                    IntroducirNum.setText("");
+                }
                 JButton boton = (JButton) e.getSource();
                 String operador = boton.getText();
                 IntroducirNum.setText(IntroducirNum.getText() + operador);
@@ -156,6 +167,11 @@ public class Calculadora {
         ActionListener ansActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //Si previamente esta el texto de error
+                String currentText = IntroducirNum.getText();
+                if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
+                    IntroducirNum.setText("");
+                }
                 IntroducirNum.setText(String.valueOf(previousResult)); // Muestra el resultado anterior
             }
         };
@@ -201,13 +217,42 @@ public class Calculadora {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                // Lógica para eliminar el último carácter en la pantalla de la calculadora.
+                //Si previamente esta el texto de error
                 String currentText = IntroducirNum.getText();
+                if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
+                    IntroducirNum.setText("");
+                }
+                // Lógica para eliminar el último carácter en la pantalla de la calculadora.
                 if (currentText.length() > 0) {
                     IntroducirNum.setText(currentText.substring(0, currentText.length() - 1));
                 }
             }
         };
+        IntroducirNum.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                // Borra el texto de error si se está ingresando un número o un punto
+                String currentText = IntroducirNum.getText();
+                if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
+                    IntroducirNum.setText("");
+                }
+
+                char c = e.getKeyChar();
+                if (!Character.isDigit(c) && c != '.' && c != '\b') {
+                    e.consume(); // Consume el evento si no es un número, punto o retroceso (backspace)
+                }
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                // No es necesario implementar esto, pero es parte de la interfaz KeyListener.
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                // No es necesario implementar esto, pero es parte de la interfaz KeyListener.
+            }
+        });
 
         //Añadir las funciones de los botones a los numeros
         boton_1.addActionListener(numeroActionListener);
