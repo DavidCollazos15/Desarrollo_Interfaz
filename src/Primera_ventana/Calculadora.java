@@ -125,7 +125,6 @@ public class Calculadora {
                 IntroducirNum.setText(IntroducirNum.getText() + numero);
             }
         };
-
         //Funcion de los botones operadores
         ActionListener operadorActionListener = new ActionListener() {
             @Override
@@ -140,7 +139,6 @@ public class Calculadora {
                 IntroducirNum.setText(IntroducirNum.getText() + operador);
             }
         };
-
         //Funcion del boton de resultado
         ActionListener igualActionListener = new ActionListener() {
             @Override
@@ -162,7 +160,6 @@ public class Calculadora {
                 }
             }
         };
-
         //Funcion del boton de ANS
         ActionListener ansActionListener = new ActionListener() {
             @Override
@@ -175,7 +172,6 @@ public class Calculadora {
                 IntroducirNum.setText(String.valueOf(previousResult)); // Muestra el resultado anterior
             }
         };
-
         //Funcion del boton de C
         ActionListener cActionListener = new ActionListener() {
             @Override
@@ -183,13 +179,17 @@ public class Calculadora {
                 IntroducirNum.setText("");
             }
         };
-
         //Funcion del boton de CE
         ActionListener ceActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String currentText = IntroducirNum.getText();
 
+                //Si previamente esta el texto de error
+                if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
+                    IntroducirNum.setText("");
+                }
                 if (!currentText.isEmpty()) {
                     // Encuentra la última posición de un operador en el texto
                     int lastIndex = currentText.lastIndexOf("+");
@@ -205,7 +205,7 @@ public class Calculadora {
                         // Borra el texto después del último operador
                         IntroducirNum.setText(currentText.substring(0, lastOperatorIndex + 1));
                     } else {
-                        // Si no hay operadores lo borra
+                        // Si no hay operadores, lo borra
                         IntroducirNum.setText("");
                     }
                 }
