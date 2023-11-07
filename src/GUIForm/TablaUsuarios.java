@@ -1,4 +1,4 @@
-package InterfazTablaUsuarios;
+package GUIForm;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
