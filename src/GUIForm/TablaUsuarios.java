@@ -1,5 +1,7 @@
 package GUIForm;
 
+import com.mysql.cj.jdbc.result.ResultSetImpl;
+
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -10,7 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TablaUsuarios {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         JFrame ventana = new JFrame();
         ventana.setBounds(10, 10, 800, 400);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -154,6 +156,22 @@ public class TablaUsuarios {
 
         // Funciones de los botones
         final int[] proximoID = {1}; // Variable para llevar el control del ID
+
+        //Mostrar datos de la base de datos
+
+        while (resultSet.next()) {
+            int id = resultSet.getInt("id");
+            String nombre = resultSet.getString("username");
+            String apellidos = resultSet.getString("surname");
+            String dni = resultSet.getString("dni");
+            String email = resultSet.getString("email");
+            String password = resultSet.getString("password");
+
+            ModeloTabla.addRow(new Object[]{id, nombre, apellidos, dni, email, password});
+            proximoID[0]=id+1;
+            idField.setText(String.valueOf(proximoID[0]));
+        }
+
         nuevoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -256,6 +274,6 @@ public class TablaUsuarios {
 
         ventana.add(contenedor);
         ventana.setVisible(true);
-    }
+    }*/
 }
 

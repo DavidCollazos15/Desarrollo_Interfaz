@@ -115,7 +115,7 @@ public class Calculadora {
         ActionListener numeroActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Si previamente esta el texto de error
+                //Si previamente está el texto de error
                 String currentText = IntroducirNum.getText();
                 if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
                     IntroducirNum.setText("");
@@ -129,7 +129,7 @@ public class Calculadora {
         ActionListener operadorActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Si previamente esta el texto de error
+                //Si previamente está el texto de error
                 String currentText = IntroducirNum.getText();
                 if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
                     IntroducirNum.setText("");
@@ -164,7 +164,7 @@ public class Calculadora {
         ActionListener ansActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //Si previamente esta el texto de error
+                //Si previamente está el texto de error
                 String currentText = IntroducirNum.getText();
                 if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
                     IntroducirNum.setText("");
@@ -186,7 +186,7 @@ public class Calculadora {
 
                 String currentText = IntroducirNum.getText();
 
-                //Si previamente esta el texto de error
+                //Si previamente está el texto de error
                 if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
                     IntroducirNum.setText("");
                 }
@@ -217,7 +217,7 @@ public class Calculadora {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                //Si previamente esta el texto de error
+                //Si previamente está el texto de error
                 String currentText = IntroducirNum.getText();
                 if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
                     IntroducirNum.setText("");
@@ -228,21 +228,20 @@ public class Calculadora {
                 }
             }
         };
-        IntroducirNum.addKeyListener(new KeyListener() {
+        IntroducirNum.addKeyListener(new KeyAdapter() {
             @Override
             public void keyTyped(KeyEvent e) {
-                // Borra el texto de error si se está ingresando un número o un punto
+                // Borra el texto de error si se está ingresando un número, un punto o un operador válido
                 String currentText = IntroducirNum.getText();
                 if (currentText.equals("Error") || currentText.equals("Error: División por cero")) {
                     IntroducirNum.setText("");
                 }
 
                 char c = e.getKeyChar();
-                if (!Character.isDigit(c) && c != '.' && c != '\b') {
-                    e.consume(); // Consume el evento si no es un número, punto o retroceso (backspace)
+                if (!Character.isDigit(c) && c != '.' && c != '+' && c != '-' && c != '*' && c != '/') {
+                    e.consume(); // Consume el evento si no es un número, punto, ni un operador válido
                 }
             }
-
             @Override
             public void keyPressed(KeyEvent e) {
                 // No es necesario implementar esto, pero es parte de la interfaz KeyListener.
@@ -253,6 +252,7 @@ public class Calculadora {
                 // No es necesario implementar esto, pero es parte de la interfaz KeyListener.
             }
         });
+
 
         //Añadir las funciones de los botones a los numeros
         boton_1.addActionListener(numeroActionListener);
