@@ -1,5 +1,7 @@
 package GUIForm;
 
+//import com.mysql.cj.jdbc.result.ResultSetImpl;
+
 import com.mysql.cj.jdbc.result.ResultSetImpl;
 
 import javax.swing.*;
@@ -10,9 +12,10 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
-public class TablaUsuarios {
-/*    public static void main(String[] args) {
+public class TablaUsuarios {/*
+    public static void main(String[] args) throws SQLException {
         JFrame ventana = new JFrame();
         ventana.setBounds(10, 10, 800, 400);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
